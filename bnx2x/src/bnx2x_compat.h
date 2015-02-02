@@ -1665,19 +1665,19 @@ static inline dma_addr_t skb_frag_dma_map(struct device *dev,
 #if (LINUX_PRE_VERSION(3, 3, 0))
 #define netdev_features_t u32
 
-#if NOT_SLES_OR_PRE_VERSION(SLES11_SP3)
-#if NOT_RHEL_OR_PRE_VERSION(6, 4)
-static inline u32 ethtool_rxfh_indir_default(u32 index, u32 n_rx_rings)
-{
-	return index % n_rx_rings;
-}
-#endif
-static inline void netdev_tx_completed_queue(struct netdev_queue *q,
-					    unsigned int a, unsigned int b) { }
-static inline void netdev_tx_reset_queue(struct netdev_queue *q) { }
-static inline void netdev_tx_sent_queue(struct netdev_queue *q,
-					unsigned int len) { }
-#endif
+/* #if NOT_SLES_OR_PRE_VERSION(SLES11_SP3) */
+/* #if NOT_RHEL_OR_PRE_VERSION(6, 4) */
+/* static inline u32 ethtool_rxfh_indir_default(u32 index, u32 n_rx_rings) */
+/* { */
+/* 	return index % n_rx_rings; */
+/* } */
+/* #endif */
+/* static inline void netdev_tx_completed_queue(struct netdev_queue *q, */
+/* 					    unsigned int a, unsigned int b) { } */
+/* static inline void netdev_tx_reset_queue(struct netdev_queue *q) { } */
+/* static inline void netdev_tx_sent_queue(struct netdev_queue *q, */
+/* 					unsigned int len) { } */
+/* #endif */
 #endif
 
 #ifndef eth_hw_addr_random
